@@ -1,95 +1,165 @@
 /* General Reset */
-body {
+body, h1, label, input, button, table, th, td {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header Styling */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #f0f8ff, #c8e1ff);
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Container Styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between the image and heading */
+}
+
+/* Image Styling */
+.header-logo {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Keep aspect ratio by setting only width or height */
+    border-radius: 50%; /* Makes the image circular, optional */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    object-fit: cover; /* Ensures the image is neatly cropped if dimensions differ */
+}
+
+/* Adjust H1 Margin */
+header h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Adjust font size as needed */
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-/* Main Content */
+/* Main Section */
 main {
-    margin: 2rem auto;
-    width: 90%;
-    max-width: 600px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border: 2px solid #8f94fb;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 25px;
 }
 
-/* Controls Styling */
+/* Control Section Styling */
 #controls {
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 15px;
 }
 
 #controls label {
     font-size: 1rem;
-    margin-right: 0.5rem;
+    font-weight: bold;
+    color: #4e54c8;
 }
 
 #controls input {
     flex-grow: 1;
-    padding: 0.5rem;
+    padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 0.5rem;
+    border: 2px solid #8f94fb;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+}
+
+#controls input:focus {
+    border-color: #4e54c8;
+    outline: none;
 }
 
 #controls button {
-    background-color: #4CAF50;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 #controls button:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
 }
 
-/* Result Section */
+/* Results Section Styling */
 #result {
-    margin-top: 1rem;
+    margin-top: 20px;
 }
 
 #result table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8f94fb;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #result th, #result td {
-    border: 1px solid #ddd;
+    padding: 12px 15px;
     text-align: left;
-    padding: 0.5rem;
 }
 
 #result th {
-    background-color: #4CAF50;
+    background: #6a11cb;
     color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
-#result tr:nth-child(even) {
-    background-color: #f2f2f2;
+#result td {
+    background: #f7faff;
+    color: #333;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
 }
-/* Add your own styles */
+
+#result tr:nth-child(even) td {
+    background: #eef6ff;
+}
+
+#result tr:hover td {
+    background: #dce9ff;
+}
+
+/* Button-like Effects for Rows */
+#result td {
+    cursor: pointer;
+}
+
+#result td:hover {
+    background: #b4d3ff;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #controls input {
+        width: 100%;
+    }
+
+    #result table {
+        font-size: 0.9rem;
+    }
+}
