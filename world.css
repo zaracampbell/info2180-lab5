@@ -13,21 +13,28 @@ body {
     padding: 20px;
 }
 
-/* Header Styling */
-header {
-    text-align: center;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    color: white;
-    padding: 20px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Header Container Styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between the image and heading */
 }
 
+/* Image Styling */
+.header-logo {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Keep aspect ratio by setting only width or height */
+    border-radius: 50%; /* Makes the image circular, optional */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    object-fit: cover; /* Ensures the image is neatly cropped if dimensions differ */
+}
+
+/* Adjust H1 Margin */
 header h1 {
-    font-size: 2rem;
-    letter-spacing: 2px;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    font-size: 1.8rem; /* Adjust font size as needed */
+    text-align: center;
 }
 
 /* Main Section */
