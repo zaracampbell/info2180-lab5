@@ -1,1 +1,95 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Main Content */
+main {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+/* Controls Styling */
+#controls {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#controls label {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+#controls input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+#controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#controls button:hover {
+    background-color: #45a049;
+}
+
+/* Result Section */
+#result {
+    margin-top: 1rem;
+}
+
+#result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#result th, #result td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+#result th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#result tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 /* Add your own styles */
