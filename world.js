@@ -3,22 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const lookupBtn = document.querySelector('#lookup');
     const resultDiv = document.querySelector('#result');
 
-    // Create and append the "Lookup Cities" button
-    const lookupCitiesBtn = document.createElement('button');
-    lookupCitiesBtn.textContent = 'Lookup Cities';
-    lookupCitiesBtn.id = 'lookup-cities';
-    document.querySelector('#controls').appendChild(lookupCitiesBtn);
-
-    // Function to perform AJAX request and fetch data
-    function fetchResults(lookupType = '') {
+    // Function to fetch country data from the server
+    function fetchCountryData() {
         const country = document.querySelector('#country').value.trim();
-        const url = `world.php?country=${encodeURIComponent(country)}${lookupType ? `&lookup=${lookupType}` : ''}`;
+        const url = `world.php?country=${encodeURIComponent(country)}`;
 
-        // Fetch API to get data from PHP service
+        // Use Fetch API to send an AJAX request
         fetch(url)
             .then(response => response.text())
             .then(data => {
-                resultDiv.innerHTML = data; // Insert response data into the #result div
+                resultDiv.innerHTML = data; // Insert the response data into the #result div
             })
             .catch(err => {
                 console.error('Error fetching data:', err);
@@ -26,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    // Event listeners for buttons
-    lookupBtn.addEventListener('click', () => fetchResults());
-    lookupCitiesBtn.addEventListener('click', () => fetchResults('cities'));
+    // Add event listener to the Lookup button
+    lookupBtn.addEventListener('click', fetchCountryData);
 });
-
